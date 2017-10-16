@@ -2,15 +2,23 @@
   "name": "hipernote-desktop",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
-  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently -k -n \"react,electron\" \"npm run start:react\" \"npm run start:electron\"",
+    "start:electron": "cross-env NODE_ENV=development electron scripts/electron-start.js",
+    "start:react": "react-scripts start",
     "build": "react-scripts build",
+    "build:run": "electron scripts/electron-start.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "cross-env": "^5.1.0",
+    "electron": "^1.7.9",
+    "react-scripts": "1.0.14"
   }
 }

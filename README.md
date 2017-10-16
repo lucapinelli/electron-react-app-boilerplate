@@ -1,4 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with
+[Create React App](https://github.com/facebookincubator/create-react-app).
+
+We added Electron on top of the created React App.
+
+# Electron React App
+
+## Added/Modified Scripts
+
+### npm start
+
+Starts the application in development mode. This command will starts the React
+dev server and an instance of Electron that will load the React App in the
+Electron main window. To accomplish this, this script will run two subscripts
+concurrently:
+* `npm start:react`
+* `npm start:electron`
+
+### npm start:react
+
+Runs the React app in the development mode.
+This is the original `npm start` built by the `create-react-app` tool. The
+script starts the development server on the address http://localhost:3000.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+### npm start:electron
+
+Opens an Electron instance that will wait that the React development server is up
+and running. When the React development server is ready, the script will load the
+contents exposed at the address http://localhost:3000 in the Electron main
+window.
+
+# React App
+
+Following you can find the original documentation generated using the
+`create-react-app` tool.
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
@@ -283,7 +320,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1769,7 +1806,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
