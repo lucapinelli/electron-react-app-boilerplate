@@ -1,7 +1,8 @@
 {
-  "name": "hipernote-desktop",
+  "name": "electron-react-app-boilerplate",
+  "desctiption":"Adds Electron on top of a React app created using create-react-app",
   "version": "0.1.0",
-  "private": true,
+  "homepage":"./",
   "scripts": {
     "start": "concurrently -k -n \"react,electron\" \"npm run start:react\" \"npm run start:electron\"",
     "start:electron": "cross-env NODE_ENV=development electron scripts/electron-start.js",
